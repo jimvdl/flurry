@@ -157,7 +157,7 @@ where
 
 impl<T, S> HashSetRef<'_, T, S>
 where
-    T: Clone + Ord,
+    T: Send + Sync + Clone + Ord,
 {
     /// Clears the set, removing all elements.
     ///

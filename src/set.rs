@@ -489,7 +489,7 @@ where
 
 impl<T, S> HashSet<T, S>
 where
-    T: Clone + Ord,
+    T: Send + Sync + Clone + Ord,
 {
     /// Clears the set, removing all elements.
     ///

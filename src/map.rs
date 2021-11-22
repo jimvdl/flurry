@@ -1459,7 +1459,8 @@ where
 
 impl<K, V, S> HashMap<K, V, S>
 where
-    K: Clone + Ord,
+    K: Send + Sync + Clone + Ord,
+    V: Send + Sync,
 {
     /// Clears the map, removing all key-value pairs.
     ///
